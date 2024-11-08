@@ -36,7 +36,7 @@
                 </select>
             </div>
             <div>
-                <button class="button" onclick="button()">
+                <button class="button" onclick="btn()">
                     Convert
                 </button>
             </div>
@@ -72,7 +72,7 @@
         //     console.log(result);
         // }
 
-        function button() {
+        function btn() {
             let val = document.getElementById('val').value;
             let res = document.getElementById('res');
 
@@ -107,14 +107,20 @@
                 console.log(result)
 
             }else if (fromUnit== 'celsius'&& toUnit== 'Kelvin'){
-                console.log('true')
+                
                 result=(val+273.15);
+                  res.innerHTML = `<h1> ${result} </h1>`
             }else if (fromUnit=='Fahrenheit'&& toUnit=='Kelvin'){
                 console.log('true')
-                result=((value−32)×5⁄ 9+273.15)
-                
+               
+
+                result = (val - 32) * 5 / 9 + 273.15;
+                  res.innerHTML = `<h1> ${result} </h1>`
+
             }else if(fromUnit== 'Kelvin' && toUnit=='Fahrenheit'){
                 console.log('true')
+                result =(val -273.15) *1.8 + 32;
+                res.innerHTML=`<h1> ${result} </h1>`
             }
             
             
